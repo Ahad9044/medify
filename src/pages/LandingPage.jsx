@@ -150,7 +150,7 @@ function LandingPage() {
                     id="city"
                     className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl flex items-center justify-between cursor-pointer bg-white"
                     onClick={() => {
-                      if (!loadingCities && selectedState) {
+                      if (selectedState) {
                         setCityOpen((prev) => !prev)
                         setStateOpen(false)
                       }
