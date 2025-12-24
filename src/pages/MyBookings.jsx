@@ -10,7 +10,31 @@ function MyBookings() {
 
   const loadBookings = () => {
     const storedBookings = JSON.parse(localStorage.getItem('bookings') || '[]')
-    setBookings(storedBookings)
+    const normalized = storedBookings.map((booking) => {
+      // Support both our internal format and the Cypress fixture format
+      if (booking.hospitalName) {
+        return booking
+      }
+
+      const legacyName = booking['Hospital Name']
+      if (legacyName) {
+        return {
+          id: booking.id || Date.now(),
+          hospitalName: legacyName,
+          address: booking.address || booking.Address || '',
+          city: booking.city || booking.City || '',
+          state: booking.state || booking.State || '',
+          zipCode: booking.zipCode || booking['ZIP Code'] || '',
+          rating: booking.rating || booking['Hospital overall rating'],
+          date: booking.date || booking.bookingDate || '',
+          time: booking.time || booking.bookingTime || '',
+          timeOfDay: booking.timeOfDay || '',
+        }
+      }
+
+      return booking
+    })
+    setBookings(normalized)
   }
 
   const handleCancelBooking = (bookingId) => {
