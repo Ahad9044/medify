@@ -141,25 +141,25 @@ function Booking() {
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
                 {hospital['Hospital Name']}
               </h3>
-              <div className="space-y-3 text-gray-600">
-                <div className="flex items-start space-x-3">
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start space-x-3">
                   <span className="text-gray-400 mt-1">📍</span>
                   <p><span className="font-semibold text-gray-700">Address: </span>{hospital.Address}</p>
-                </div>
-                <div className="flex items-center space-x-3">
+                </li>
+                <li className="flex items-center space-x-3">
                   <span className="text-gray-400">🏙️</span>
                   <p><span className="font-semibold text-gray-700">City: </span>{hospital.City}</p>
-                </div>
-                <div className="flex items-center space-x-3">
+                </li>
+                <li className="flex items-center space-x-3">
                   <span className="text-gray-400">🗺️</span>
                   <p><span className="font-semibold text-gray-700">State: </span>{hospital.State}</p>
-                </div>
-                <div className="flex items-center space-x-3">
+                </li>
+                <li className="flex items-center space-x-3">
                   <span className="text-gray-400">📮</span>
                   <p><span className="font-semibold text-gray-700">ZIP: </span>{hospital['ZIP Code']}</p>
-                </div>
+                </li>
                 {hospital['Overall Rating'] && (
-                  <div className="flex items-center space-x-3">
+                  <li className="flex items-center space-x-3">
                     <span className="text-gray-400">⭐</span>
                     <p>
                       <span className="font-semibold text-gray-700">Rating: </span>
@@ -168,9 +168,9 @@ function Booking() {
                       </span>{' '}
                       ({hospital['Overall Rating']})
                     </p>
-                  </div>
+                  </li>
                 )}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
