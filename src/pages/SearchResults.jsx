@@ -61,11 +61,11 @@ function SearchResults() {
           <p className="text-gray-600">Select a medical center to book your appointment</p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {medicalCenters.map((center, index) => (
-            <div
+            <li
               key={index}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 group"
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 group list-none"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
@@ -122,9 +122,9 @@ function SearchResults() {
               >
                 Book FREE Center Visit
               </button>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {medicalCenters.length === 0 && (
           <div className="bg-white rounded-xl shadow-md p-12 text-center">
