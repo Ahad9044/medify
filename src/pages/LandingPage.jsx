@@ -43,7 +43,8 @@ function LandingPage() {
       const response = await fetch('https://meddata-backend.onrender.com/states')
       const data = await response.json()
       if (Array.isArray(data) && data.length > 0) {
-        setStates(data)
+        const combined = [...new Set([...FALLBACK_STATES, ...data])]
+        setStates(combined)
       }
     } catch (error) {
       console.error('Error fetching states:', error)
