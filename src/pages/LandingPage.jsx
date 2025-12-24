@@ -103,16 +103,18 @@ function LandingPage() {
                   Select State
                 </label>
                 <div
-                  id="state"
                   className="relative"
-                  onClick={() => {
-                    if (!loadingStates) {
-                      setStateOpen((prev) => !prev)
-                      setCityOpen(false)
-                    }
-                  }}
                 >
-                  <div className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl flex items-center justify-between cursor-pointer bg-white">
+                  <div
+                    id="state"
+                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl flex items-center justify-between cursor-pointer bg-white"
+                    onClick={() => {
+                      if (!loadingStates) {
+                        setStateOpen((prev) => !prev)
+                        setCityOpen(false)
+                      }
+                    }}
+                  >
                     <span className="text-gray-900 font-medium">
                       {selectedState || 'Select a state'}
                     </span>
@@ -144,16 +146,18 @@ function LandingPage() {
                   Select City
                 </label>
                 <div
-                  id="city"
                   className="relative"
-                  onClick={() => {
-                    if (!loadingCities && selectedState) {
-                      setCityOpen((prev) => !prev)
-                      setStateOpen(false)
-                    }
-                  }}
                 >
-                  <div className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl flex items-center justify-between cursor-pointer bg-white">
+                  <div
+                    id="city"
+                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl flex items-center justify-between cursor-pointer bg-white"
+                    onClick={() => {
+                      if (!loadingCities && selectedState) {
+                        setCityOpen((prev) => !prev)
+                        setStateOpen(false)
+                      }
+                    }}
+                  >
                     <span className="text-gray-900 font-medium">
                       {selectedCity || 'Select a city'}
                     </span>
