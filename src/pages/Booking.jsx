@@ -214,41 +214,39 @@ function Booking() {
           </div>
 
           {/* Time Selection */}
-          {selectedDate && (
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">Select Time</h3>
-              <div className="space-y-8">
-                {Object.entries(timeSlots).map(([timeOfDay, slots]) => (
-                  <div key={timeOfDay}>
-                    <p className="text-sm font-semibold text-gray-700 mb-4">{timeOfDay}</p>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                      {slots.map((slot) => {
-                        const isSelected = selectedTime === slot && selectedTimeOfDay === timeOfDay
-                        return (
-                          <button
-                            key={slot}
-                            onClick={() => {
-                              setSelectedTime(slot)
-                              setSelectedTimeOfDay(timeOfDay)
-                            }}
-                            className={`p-4 rounded-xl border-2 transition-all ${
-                              isSelected
-                                ? 'border-blue-600 bg-blue-50 shadow-md'
-                                : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50/50'
-                            }`}
-                          >
-                            <p className={`text-sm font-semibold ${isSelected ? 'text-blue-900' : 'text-gray-700'}`}>
-                              {slot}
-                            </p>
-                          </button>
-                        )
-                      })}
-                    </div>
+          <div className="mb-8">
+            <h3 className="text-lg font-semibold text-gray-900 mb-6">Select Time</h3>
+            <div className="space-y-8">
+              {Object.entries(timeSlots).map(([timeOfDay, slots]) => (
+                <div key={timeOfDay}>
+                  <p className="text-sm font-semibold text-gray-700 mb-4">{timeOfDay}</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                    {slots.map((slot) => {
+                      const isSelected = selectedTime === slot && selectedTimeOfDay === timeOfDay
+                      return (
+                        <button
+                          key={slot}
+                          onClick={() => {
+                            setSelectedTime(slot)
+                            setSelectedTimeOfDay(timeOfDay)
+                          }}
+                          className={`p-4 rounded-xl border-2 transition-all ${
+                            isSelected
+                              ? 'border-blue-600 bg-blue-50 shadow-md'
+                              : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50/50'
+                          }`}
+                        >
+                          <p className={`text-sm font-semibold ${isSelected ? 'text-blue-900' : 'text-gray-700'}`}>
+                            {slot}
+                          </p>
+                        </button>
+                      )
+                    })}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          )}
+          </div>
 
           {/* Confirm Button */}
           <button
