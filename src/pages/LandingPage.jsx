@@ -109,10 +109,8 @@ function LandingPage() {
                     id="state"
                     className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl flex items-center justify-between cursor-pointer bg-white"
                     onClick={() => {
-                      if (!loadingStates) {
-                        setStateOpen((prev) => !prev)
-                        setCityOpen(false)
-                      }
+                      setStateOpen((prev) => !prev)
+                      setCityOpen(false)
                     }}
                   >
                     <span className="text-gray-900 font-medium">
