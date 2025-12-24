@@ -220,7 +220,7 @@ function Booking() {
               <div className="space-y-8">
                 {Object.entries(timeSlots).map(([timeOfDay, slots]) => (
                   <div key={timeOfDay}>
-                    <p className="text-base font-semibold text-gray-800 mb-4">{timeOfDay}</p>
+                    <p className="text-sm font-semibold text-gray-700 mb-4">{timeOfDay}</p>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                       {slots.map((slot) => {
                         const isSelected = selectedTime === slot && selectedTimeOfDay === timeOfDay
